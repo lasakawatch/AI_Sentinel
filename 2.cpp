@@ -8,7 +8,6 @@ using namespace std;
 struct Actor {
     string id;          // ID unik Aktor
     string name;        // Nama Aktor
-    double discount;    // Potongan member dalam %
     Actor* next;        // Pointer ke Aktor berikutnya
 };
 // Struktur data untuk Film (Parent)
@@ -17,7 +16,7 @@ struct Film {
     string title;               // Judul Film
     int capacity;               // Kapasitas maksimal
     int participantCount;       // Jumlah peserta saat ini
-    double cost;                // Biaya perjalanan dalam juta
+    double ticketPrice;         // Harga tiket
     string pic;                 // PIC (Person in Charge)
     Film* next;                 // Pointer ke Film berikutnya
     struct Relation* relations; // Pointer ke daftar relasi
@@ -32,17 +31,17 @@ Film* headFilm = nullptr;
 Actor* headActor = nullptr;
 
 // a. Insert Element Parent : 5 ===============================================
-void addFilm(string id, string title, int capacity, double cost, string pic) {
+void addFilm(string id, string title, int capacity, double ticketPrice, string pic) {
     // Membuat Film baru
-    Film* newFilm = new Film{id, title, capacity, 0, cost, pic, nullptr, nullptr};
+    Film* newFilm = new Film{id, title, capacity, 0, ticketPrice, pic, nullptr, nullptr};
     // Menambahkan ke awal daftar Film
     newFilm->next = headFilm; headFilm = newFilm;
     cout << "Film \"" << title << "\" berhasil ditambahkan.\n";}
 
 // b. Insert Element Child : 5 ====================================================
-void addActor(string id, string name, double discount) {
+void addActor(string id, string name) {
     // Membuat Aktor baru
-    Actor* newActor = new Actor{id, name, discount, nullptr};
+    Actor* newActor = new Actor{id, name, nullptr};
     newActor->next = headActor; headActor = newActor;
     cout << "Aktor \"" << name << "\" berhasil ditambahkan.\n";}
 
@@ -50,7 +49,7 @@ void addActor(string id, string name, double discount) {
 void addRelation(string filmId, string actorId) {
     // Mencari Film berdasarkan ID
     Film* film = headFilm;
-    while (film && film->id != filmId) 
+    while (film && film->id != filmId)
     {film = film->next;}
     // Mencari Aktor berdasarkan ID
     Actor* actor = headActor;
@@ -59,7 +58,7 @@ void addRelation(string filmId, string actorId) {
 
     if (film && actor) {// Mengecek apakah relasi sudah ada
     Relation* rel = film->relations;
-    while (rel) {if (rel->actor == actor) 
+    while (rel) {if (rel->actor == actor)
     { cout << "Relasi antara Film \"" << film->title << "\" dan Aktor \"" << actor->name << "\" sudah ada.\n";
     return;} rel = rel->next;}
         // Membuat Relasi baru
@@ -98,11 +97,9 @@ void deleteActor(string id) {
     while (*current && (*current)->id != id) {
         current = &((*current)->next);
     }
-
     if (*current) {
         Actor* toDelete = *current;
         *current = (*current)->next;
-
         // Menghapus Aktor dari semua relasi yang ada
         Film* film = headFilm;
         while (film) {
@@ -120,17 +117,13 @@ void deleteActor(string id) {
             }
             film = film->next;
         }
-
         delete toDelete;
         cout << "Aktor dengan ID \"" << id << "\" berhasil dihapus.\n";
     } else {
         cout << "Aktor dengan ID \"" << id << "\" tidak ditemukan.\n";
     }
 }
-
-// --------------------------------------------------
-// f. Delete Element Relation : 5
-// --------------------------------------------------
+// f. Delete Element Relation : 5 =================================================
 void deleteRelation(string filmId, string actorId) {
     // Mencari Film berdasarkan ID
     Film* film = headFilm;
@@ -165,10 +158,7 @@ void deleteRelation(string filmId, string actorId) {
         cout << "Film atau Aktor tidak ditemukan.\n";
     }
 }
-
-// --------------------------------------------------
-// g. Find Element Parent : 5
-// --------------------------------------------------
+// g. Find Element Parent : 5 =================================================
 Film* findFilmById(string id) {
     Film* current = headFilm;
     while (current && current->id != id) {
@@ -176,10 +166,7 @@ Film* findFilmById(string id) {
     }
     return current;
 }
-
-// --------------------------------------------------
-// h. Find Element Child : 5
-// --------------------------------------------------
+// h. Find Element Child : 5 =================================================
 Actor* findActorById(string id) {
     Actor* current = headActor;
     while (current && current->id != id) {
@@ -187,10 +174,7 @@ Actor* findActorById(string id) {
     }
     return current;
 }
-
-// --------------------------------------------------
-// i. Find Element Relation : 5
-// --------------------------------------------------
+// i. Find Element Relation : 5 =================================================
 bool findRelation(string filmId, string actorId) {
     Film* film = findFilmById(filmId);
     Actor* actor = findActorById(actorId);
@@ -205,10 +189,7 @@ bool findRelation(string filmId, string actorId) {
     }
     return false;
 }
-
-// --------------------------------------------------
-// j. Show All Data di List Parent : 5
-// --------------------------------------------------
+// j. Show All Data di List Parent : 5  ================================================
 void showAllFilms() {
     Film* current = headFilm;
     if (!current) {
@@ -221,15 +202,12 @@ void showAllFilms() {
         cout << "- " << current->title << " (ID: " << current->id << ")\n";
         cout << "  Kapasitas: " << current->capacity
              << ", Peserta: " << current->participantCount
-             << ", Biaya: " << fixed << setprecision(2) << current->cost << " juta"
+             << ", Harga Tiket: Rp " << fixed << setprecision(2) << current->ticketPrice
              << ", PIC: " << current->pic << "\n";
         current = current->next;
     }
 }
-
-// --------------------------------------------------
-// k. Show All Data di List Child : 5
-// --------------------------------------------------
+// k. Show All Data di List Child :5  ================================================
 void showAllActors() {
     Actor* current = headActor;
     if (!current) {
@@ -239,15 +217,11 @@ void showAllActors() {
 
     cout << "\n===== Daftar Aktor =====\n";
     while (current) {
-        cout << "- " << current->name << " (ID: " << current->id << "), Potongan: "
-             << fixed << setprecision(2) << current->discount << "%\n";
+        cout << "- " << current->name << " (ID: " << current->id << ")\n";
         current = current->next;
     }
 }
-
-// --------------------------------------------------
-// l. Show Data Child dari Parent Tertentu : 5
-// --------------------------------------------------
+// l. Show Data Child dari Parent Tertentu : 5  ===============================================
 void showActorsByFilm(string filmId) {
     Film* film = findFilmById(filmId);
     if (film) {
@@ -258,25 +232,20 @@ void showActorsByFilm(string filmId) {
         }
         Relation* rel = film->relations;
         while (rel) {
-            cout << "- " << rel->actor->name << " (ID: " << rel->actor->id << "), Potongan: "
-                 << fixed << setprecision(2) << rel->actor->discount << "%\n";
+            cout << "- " << rel->actor->name << " (ID: " << rel->actor->id << ")\n";
             rel = rel->next;
         }
     } else {
         cout << "Film dengan ID \"" << filmId << "\" tidak ditemukan.\n";
     }
 }
-
-// --------------------------------------------------
-// m. Show Setiap Data Parent Beserta Data Child yang Berelasi dengannya : 5
-// --------------------------------------------------
+// m. Show Setiap Data Parent Beserta Data Child yang Berelasi dengannya : 5 ==============================================
 void showAllFilmsWithActors() {
     Film* film = headFilm;
     if (!film) {
         cout << "\nDaftar Film kosong.\n";
         return;
     }
-
     cout << "\n===== Semua Film dan Aktor yang Berelasi =====\n";
     while (film) {
         cout << "Film: " << film->title << " (ID: " << film->id << ")\n";
@@ -285,84 +254,52 @@ void showAllFilmsWithActors() {
             cout << "  - Tidak ada relasi.\n";
         }
         while (rel) {
-            cout << "  - Aktor: " << rel->actor->name << " (ID: " << rel->actor->id << "), Potongan: "
-                 << fixed << setprecision(2) << rel->actor->discount << "%\n";
+            cout << "  - Aktor: " << rel->actor->name << " (ID: " << rel->actor->id << ")\n";
             rel = rel->next;
         }
         film = film->next;
     }
 }
-
-// --------------------------------------------------
-// n. Show Data Child Beserta Data Parent yang Masing-masing Child Miliki : 10
-// --------------------------------------------------
+// n. Show Data Child Beserta Data Parent yang Masing-masing Child Miliki : 10 =====================================
 void showAllActorsWithFilms() {
     Actor* actor = headActor;
-    if (!actor) {
-        cout << "\nDaftar Aktor kosong.\n";
-        return;
+    if (!actor) { cout << "\nDaftar Aktor kosong.\n";return;
     }
-
     cout << "\n===== Semua Aktor dan Film yang Berelasi =====\n";
-    while (actor) {
-        cout << "Aktor: " << actor->name << " (ID: " << actor->id << ")\n";
+    while (actor) { cout << "Aktor: " << actor->name << " (ID: " << actor->id << ")\n";
         bool hasRelation = false;
         Film* film = headFilm;
         while (film) {
-            Relation* rel = film->relations;
-            while (rel) {
-                if (rel->actor == actor) {
-                    cout << "  - Film: " << film->title << " (ID: " << film->id << "), Biaya: "
-                         << fixed << setprecision(2) << film->cost << " juta\n";
-                    hasRelation = true;
-                    break; // Agar tidak mencetak film yang sama berkali-kali jika ada relasi ganda
+        Relation* rel = film->relations;
+        while (rel) { if (rel->actor == actor) {
+                    cout << "  - Film: " << film->title << " (ID: " << film->id << "), Harga Tiket: Rp "
+                    << fixed << setprecision(2) << film->ticketPrice << "\n";
+                    hasRelation = true; break;
                 }
-                rel = rel->next;
-            }
-            film = film->next;
-        }
-        if (!hasRelation) {
-            cout << "  - Tidak ada relasi.\n";
-        }
-        actor = actor->next;
-    }
+            rel = rel->next;
+            }film = film->next;
+        }if (!hasRelation) { cout << "  - Tidak ada relasi.\n";}
+        actor = actor->next;}
 }
-
-// --------------------------------------------------
-// o. Show Data Parent yang Berelasi dengan Child Tertentu : 5
-// --------------------------------------------------
+// o. Show Data Parent yang Berelasi dengan Child Tertentu : 5 ============================================
 void showFilmsByActor(string actorId) {
     Actor* actor = findActorById(actorId);
-    if (!actor) {
-        cout << "Aktor dengan ID \"" << actorId << "\" tidak ditemukan.\n";
-        return;
+    if (!actor) { cout << "Aktor dengan ID \"" << actorId << "\" tidak ditemukan.\n";return;
     }
-
     bool found = false;
     cout << "\n===== Film yang Dikutip oleh Aktor \"" << actor->name << "\" =====\n";
-    Film* film = headFilm;
-    while (film) {
-        Relation* rel = film->relations;
+    Film* film = headFilm; while (film) { Relation* rel = film->relations; // Mencari relasi antara film dan aktor
         while (rel) {
-            if (rel->actor == actor) {
-                cout << "- " << film->title << " (ID: " << film->id << "), Biaya: "
-                     << fixed << setprecision(2) << film->cost << " juta\n";
-                found = true;
-                break; // Agar tidak mencetak film yang sama berkali-kali jika ada relasi ganda
-            }
-            rel = rel->next;
-        }
-        film = film->next;
+        if (rel->actor == actor) {
+                cout << "- " << film->title << " (ID: " << film->id << "), Harga Tiket: Rp "
+                 << fixed << setprecision(2) << film->ticketPrice << "\n";
+                found = true; break; }
+            rel = rel->next;}
+            film = film->next;
     }
-
-    if (!found) {
-        cout << "Tidak ada film yang terkait dengan aktor tersebut.\n";
-    }
+    if (!found) {cout << "Tidak ada film yang terkait dengan aktor tersebut.\n"; }
 }
-
-// --------------------------------------------------
-// p. Count Relation dari Setiap Element Parent : 5
-// --------------------------------------------------
+// p. Count Relation dari Setiap Element Parent : 5 ===============================================
 void countRelationsPerFilm() {
     Film* film = headFilm;
     if (!film) {
@@ -382,17 +319,13 @@ void countRelationsPerFilm() {
         film = film->next;
     }
 }
-
-// --------------------------------------------------
-// q. Count Relation yang Dimiliki oleh Child Tertentu : 5
-// --------------------------------------------------
+// q. Count Relation yang Dimiliki oleh Child Tertentu : 5 ==============================================
 void countRelationsPerActor() {
     Actor* actor = headActor;
     if (!actor) {
         cout << "\nTidak ada Aktor untuk dihitung relasinya.\n";
         return;
     }
-
     cout << "\n===== Jumlah Relasi per Aktor =====\n";
     while (actor) {
         int count = 0;
@@ -412,17 +345,13 @@ void countRelationsPerActor() {
         actor = actor->next;
     }
 }
-
-// --------------------------------------------------
-// r. Count Element Child yang Tidak Memiliki Relasi : 5
-// --------------------------------------------------
+// r. Count Element Child yang Tidak Memiliki Relasi : 5 ===============================================
 void countActorsWithoutRelations() {
     Actor* actor = headActor;
     if (!actor) {
         cout << "\nTidak ada Aktor untuk dihitung.\n";
         return;
     }
-
     int count = 0;
     while (actor) {
         bool hasRelation = false;
@@ -444,10 +373,7 @@ void countActorsWithoutRelations() {
     cout << "\n===== Jumlah Aktor tanpa Relasi =====\n";
     cout << "Jumlah Aktor tanpa relasi: " << count << "\n";
 }
-
-// --------------------------------------------------
-// s. Edit Relasi / Mengganti Child dari Parent Tertentu : 5
-// --------------------------------------------------
+// s. Edit Relasi / Mengganti Child dari Parent Tertentu : 5 ==============================================
 void editRelation(string filmId, string oldActorId, string newActorId) {
     // Mencari Film
     Film* film = findFilmById(filmId);
@@ -455,7 +381,6 @@ void editRelation(string filmId, string oldActorId, string newActorId) {
         cout << "Film dengan ID \"" << filmId << "\" tidak ditemukan.\n";
         return;
     }
-
     // Mencari Aktor lama dan baru
     Actor* oldActor = findActorById(oldActorId);
     Actor* newActor = findActorById(newActorId);
@@ -464,7 +389,6 @@ void editRelation(string filmId, string oldActorId, string newActorId) {
         cout << "Aktor lama atau baru tidak ditemukan.\n";
         return;
     }
-
     // Mencari Relasi yang ingin diubah
     Relation* rel = film->relations;
     while (rel) {
@@ -477,27 +401,18 @@ void editRelation(string filmId, string oldActorId, string newActorId) {
                     exists = true;
                     break;
                 }
-                temp = temp->next;
-            }
+                temp = temp->next; }
             if (exists) {
                 cout << "Relasi antara Film \"" << film->title << "\" dan Aktor \"" << newActor->name << "\" sudah ada.\n";
-                return;
-            }
-
+                return; }
             // Mengubah Aktor dalam relasi
             rel->actor = newActor;
             cout << "Relasi berhasil diubah dari Aktor \"" << oldActor->name << "\" menjadi Aktor \"" << newActor->name << "\".\n";
-            return;
-        }
-        rel = rel->next;
-    }
+            return;}
+        rel = rel->next;}
     cout << "Relasi antara Film \"" << film->title << "\" dan Aktor \"" << oldActor->name << "\" tidak ditemukan.\n";
 }
-
-// --------------------------------------------------
-// Detail Functions
-// --------------------------------------------------
-
+// Detail Functions  =====================================
 // 15. Show Detail Film : 5
 void showFilmDetails(string filmId) {
     Film* film = findFilmById(filmId);
@@ -507,13 +422,11 @@ void showFilmDetails(string filmId) {
         cout << "Title: " << film->title << "\n";
         cout << "Kapasitas Maksimal: " << film->capacity << "\n";
         cout << "Jumlah Peserta: " << film->participantCount << "\n";
-        cout << "Biaya Perjalanan: " << fixed << setprecision(2) << film->cost << " juta\n";
+        cout << "Harga Tiket: Rp " << fixed << setprecision(2) << film->ticketPrice << "\n";
         cout << "PIC: " << film->pic << "\n";
     } else {
-        cout << "Film dengan ID \"" << filmId << "\" tidak ditemukan.\n";
-    }
+        cout << "Film dengan ID \"" << filmId << "\" tidak ditemukan.\n";}
 }
-
 // 16. Show Detail Aktor : 5
 void showActorDetails(string actorId) {
     Actor* actor = findActorById(actorId);
@@ -521,15 +434,9 @@ void showActorDetails(string actorId) {
         cout << "\n===== Detail Aktor =====\n";
         cout << "ID: " << actor->id << "\n";
         cout << "Name: " << actor->name << "\n";
-        cout << "Potongan Member: " << fixed << setprecision(2) << actor->discount << "%\n";
-    } else {
-        cout << "Aktor dengan ID \"" << actorId << "\" tidak ditemukan.\n";
-    }
+    } else {cout << "Aktor dengan ID \"" << actorId << "\" tidak ditemukan.\n";}
 }
-
-// --------------------------------------------------
-// Main Function
-// --------------------------------------------------
+// Main Function  =====================================
 int main() {
     // Judul Program
     cout << "============================================\n";
@@ -539,29 +446,26 @@ int main() {
     int choice;
     string filmId, filmTitle, actorId, actorName, pic;
     int capacity;
-    double cost, discount;
+    double ticketPrice;
     string relationFilmId, relationActorId;
     string editFilmId, oldActorId_input, newActorId_input;
-
     // Menambahkan beberapa Film
-    addFilm("F1", "Inception", 5, 10.0, "Febryanti");
-    addFilm("F2", "Interstellar", 5, 12.0, "Febryanti");
-    addFilm("F3", "The Dark Knight", 5, 11.0, "Febryanti");
-    addFilm("F4", "Dunkirk", 5, 9.0, "Febryanti");
-    addFilm("F5", "Tenet", 5, 13.0, "Febryanti");
-
+    addFilm("F1", "Inception", 5, 75000, "Febryanti");
+    addFilm("F2", "Interstellar", 5, 80000, "Febryanti");
+    addFilm("F3", "The Dark Knight", 5, 90000, "Febryanti");
+    addFilm("F4", "Dunkirk", 5, 60000, "Febryanti");
+    addFilm("F5", "Tenet", 5, 95000, "Febryanti");
     // Menambahkan beberapa Aktor
-    addActor("A1", "Leonardo DiCaprio", 10.0);
-    addActor("A2", "Matthew McConaughey", 5.0);
-    addActor("A3", "Christian Bale", 12.0);
-    addActor("A4", "Joseph Gordon-Levitt", 7.0);
-    addActor("A5", "Elliot Page", 8.0);
-    addActor("A6", "Tom Hardy", 9.0);
-    addActor("A7", "Anne Hathaway", 6.0);
-    addActor("A8", "Michael Caine", 4.0);
-    addActor("A9", "Cillian Murphy", 5.0);
-    addActor("A10", "Ken Watanabe", 7.0);
-
+    addActor("A1", "Leonardo DiCaprio");
+    addActor("A2", "Matthew McConaughey");
+    addActor("A3", "Christian Bale");
+    addActor("A4", "Joseph Gordon-Levitt");
+    addActor("A5", "Elliot Page");
+    addActor("A6", "Tom Hardy");
+    addActor("A7", "Anne Hathaway");
+    addActor("A8", "Michael Caine");
+    addActor("A9", "Cillian Murphy");
+    addActor("A10", "Ken Watanabe");
     // Menambahkan beberapa Relasi
     addRelation("F1", "A1"); // Inception - Leonardo DiCaprio
     addRelation("F1", "A4"); // Inception - Joseph Gordon-Levitt
@@ -589,38 +493,26 @@ int main() {
         cin.ignore(); // Membersihkan newline dari input sebelumnya
 
         switch (choice) {
-            case 1: { // Tambah Data
-                int subChoice;
+            case 1: { int subChoice;
                 cout << "\n===== Tambah Data =====\n";
                 cout << "1. Tambah Film\n";
                 cout << "2. Tambah Aktor\n";
                 cout << "Pilih opsi (1-2): ";
                 cin >> subChoice;
                 cin.ignore();
-                if (subChoice == 1) {
-                    cout << "\n--- Tambah Film ---\n";
-                    cout << "Masukkan ID Film: ";
-                    getline(cin, filmId);
-                    cout << "Masukkan Title Film: ";
-                    getline(cin, filmTitle);
-                    cout << "Masukkan Kapasitas Maksimal: ";
-                    cin >> capacity;
-                    cout << "Masukkan Biaya Perjalanan (dalam juta): ";
-                    cin >> cost;
+                if (subChoice == 1) { cout << "\n--- Tambah Film ---\n";
+                    cout << "Masukkan ID Film: ";getline(cin, filmId);
+                    cout << "Masukkan Title Film: ";getline(cin, filmTitle);
+                    cout << "Masukkan Kapasitas Maksimal: ";cin >> capacity;
+                    cout << "Masukkan Harga Tiket (50000-100000): ";cin >> ticketPrice;
                     cin.ignore();
-                    cout << "Masukkan PIC: ";
-                    getline(cin, pic);
-                    addFilm(filmId, filmTitle, capacity, cost, pic);
+                    cout << "Masukkan PIC: ";getline(cin, pic);
+                    addFilm(filmId, filmTitle, capacity, ticketPrice, pic);
                 } else if (subChoice == 2) {
                     cout << "\n--- Tambah Aktor ---\n";
-                    cout << "Masukkan ID Aktor: ";
-                    getline(cin, actorId);
-                    cout << "Masukkan Nama Aktor: ";
-                    getline(cin, actorName);
-                    cout << "Masukkan Potongan Member (%): ";
-                    cin >> discount;
-                    cin.ignore();
-                    addActor(actorId, actorName, discount);
+                    cout << "Masukkan ID Aktor: "; getline(cin, actorId);
+                    cout << "Masukkan Nama Aktor: ";getline(cin, actorName);
+                    addActor(actorId, actorName);
                 } else {
                     cout << "Opsi tidak valid.\n";
                 }
