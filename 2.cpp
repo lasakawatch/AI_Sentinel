@@ -438,7 +438,6 @@ int main() {
     addFilm("F3", "The Dark Knight", 50, 90000, "Yusuf The Scammers");
     addFilm("F4", "Dunkirk", 100, 60000, "Azka Goat");
     addFilm("F5", "Tenet", 90, 95000, "Patrick The Clucther");
-    addFilm("F5", "Pengabdi Setan", 50, 95000, "Yusuf The Scammers");
     // Menambahkan beberapa Aktor
     addActor("A1", "Leonardo DiCaprio");
     addActor("A2", "Matthew McConaughey");
@@ -447,19 +446,17 @@ int main() {
     addActor("A5", "Elliot Page");
     addActor("A6", "Tom Hardy");
     addActor("A7", "Anne Hathaway");
-    addActor("A8", "Michael Caine");
-    addActor("A9", "Cillian Murphy");
-    addActor("A10", "Ken Watanabe");
     // Menambahkan beberapa Relasi
-    addRelation("F1", "A1"); // Inception - Leonardo DiCaprio
-    addRelation("F1", "A4"); // Inception - Joseph Gordon-Levitt
-    addRelation("F2", "A2"); // Interstellar - Matthew McConaughey
-    addRelation("F3", "A3"); // The Dark Knight - Christian Bale
-    addRelation("F3", "A6"); // The Dark Knight - Tom Hardy
-    addRelation("F4", "A2"); // Dunkirk - Matthew McConaughey
-    addRelation("F4", "A8"); // Dunkirk - Michael Caine
-    addRelation("F5", "A1"); // Tenet - Leonardo DiCaprio
-    addRelation("F5", "A10"); // Tenet - Ken Watanabe
+    addRelation("F1", "A3"); 
+    addRelation("F1", "A2"); 
+    addRelation("F1", "A1"); // 
+    addRelation("F2", "A2");
+    addRelation("F4", "A5"); 
+    addRelation("F4", "A4"); 
+    addRelation("F5", "A6"); 
+    addRelation("F5", "A7"); 
+    addRelation("F5", "A1"); //
+    addRelation("F5", "A4");
 
     while (true) {
         cout << "\n===== Menu Utama =====\n";
