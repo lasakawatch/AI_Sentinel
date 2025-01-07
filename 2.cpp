@@ -350,18 +350,18 @@ void editRelation(string filmId, string oldActorId, string newActorId) { //param
     while (rel) {
         if (rel->actor == oldActor) {
             // Mengecek apakah relasi baru sudah ada
-            Relation* temp = film->relations;
-            bool exists = false;
-            while (temp) {
-                if (temp->actor == newActor) {
-                    exists = true;
+            Relation* temp = film->relations; //sismpen new sementara
+            bool exists = false; // untk new aktor exists blm jadiin o duls
+            while (temp) { 
+                if (temp->actor == newActor) { 
+                    exists = true; 
                     break;}
-                temp = temp->next;  }
-            if (exists) {
+                temp = temp->next;  }  //relasi berikutnya
+            if (exists) { //jika new id suda ada
                 cout << "Relasi antara Film \"" << film->title << "\" dan Aktor \"" << newActor->name << "\" sudah ada.\n";
                 return;  }
             // Mengubah Aktor dalam relasi
-            rel->actor = newActor;
+            rel->actor = newActor; //Mengganti pointer actor dalam relasi dari oldActor menjadi newActor.
             cout << "Relasi berhasil diubah dari Aktor \"" << oldActor->name << "\" menjadi Aktor \"" << newActor->name << "\".\n";
             return;}
             rel = rel->next; //// <-- **Linked List Traversal** 
