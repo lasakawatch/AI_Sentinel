@@ -25,7 +25,7 @@
 
 <div align="center">
 
-  <img src="https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screen%20Recording%202025-04-30%20011225%20(2).gif" alt="Demo Aplikasi AI Sentinel" style="max-width: 80%;"> 
+  <img src="https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screen%20Recording%202025-04-30%20011225%20(2).gif" alt="Demo Aplikasi AI Sentinel" style="max-width: 60%;"> 
 </div>
 
 <br>
