@@ -21,7 +21,7 @@
 
 <div align="center">
 
-  ![Foto Anggota 1]((https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/2831b90d-64ab-44fe-bee7-c51539736f01.jpg))
+  ![Foto Anggota 1](https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/2831b90d-64ab-44fe-bee7-c51539736f01.jpg)
   <br>
   **Naufal Saifullah Yusuf**
   <br>
