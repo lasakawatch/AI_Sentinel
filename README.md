@@ -20,9 +20,8 @@
 <br> <!-- Baris kosong untuk pemisah visual -->
 
 <div align="center">
-  <!-- Tempatkan foto anggota pertama di sini -->
-  <!-- Contoh: ![Foto Naufal Saifullah Yusuf](path/to/naufal_photo.jpg) -->
-  ![Foto Anggota 1](placeholder_photo_naufal.png)
+
+  ![Foto Anggota 1]([placeholder_photo_naufal.png](https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/2831b90d-64ab-44fe-bee7-c51539736f01.jpg))
   <br>
   **Naufal Saifullah Yusuf**
   <br>
