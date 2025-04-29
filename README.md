@@ -11,13 +11,40 @@
 </div>
 
 <div align="center">
-  <!-- Tambahkan Deskripsi Singkat Aplikasi di sini -->
+  <!-- Deskripsi Singkat Aplikasi -->
   <p>
     AI Sentinel adalah aplikasi cerdas berbasis kecerdasan buatan yang dirancang untuk membantu petani modern. Aplikasi ini menyediakan solusi seperti identifikasi penyakit dan hama pada tanaman, prediksi cuaca real-time untuk perencanaan pertanian, dan akses ke informasi serta marketplace produk pertanian untuk meningkatkan produktivitas dan kualitas hasil panen.
   </p>
 </div>
 
+<br> <!-- Jarak antara Deskripsi dan Demo -->
+
+## Demo Aplikasi
+
 <br>
+
+<div align="center">
+  <!-- Tempatkan Gambar GIF Demo Aplikasi di sini -->
+  <!-- Contoh: ![AI Sentinel Demo GIF](path/to/your/demo.gif) -->
+  <img src="placeholder_demo.gif" alt="Demo Aplikasi AI Sentinel" style="max-width: 80%;"> <!-- Tambahkan max-width agar responsif -->
+</div>
+
+<br>
+
+<div align="center">
+  <!-- Link Figma -->
+  🎨 <a href="LINK_FIGMA_ANDA" target="_blank">Lihat Desain UI di Figma</a>
+</div>
+
+<br>
+
+<div align="center">
+  <!-- Link YouTube -->
+  ▶️ <a href="LINK_YOUTUBE_ANDA" target="_blank">Tonton Demo Aplikasi di YouTube</a>
+</div>
+
+<br><br> <!-- Jarak antara Link dan Anggota -->
+
 
 ## Anggota
 
