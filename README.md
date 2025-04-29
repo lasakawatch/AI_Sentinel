@@ -6,7 +6,7 @@
 
 <div align="center">
 
-  <img src="https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screenshot%202025-04-29%20235159.png" alt="Gambar Proyek AI Sentinel" style="max-width: 600px; width: 80%;"> w -->
+  <img src="https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screenshot%202025-04-29%20235159.png" alt="Gambar Proyek AI Sentinel" style="max-width: 600px; width: 80%;"> 
   <br>
 </div>
 
