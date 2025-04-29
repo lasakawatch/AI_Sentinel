@@ -8,7 +8,7 @@
   <!-- Tempatkan tag gambar proyek Anda di sini -->
   <!-- Contoh: ![Gambar Proyek AI Sentinel](path/to/your/project-image.jpg) -->
   <!-- Atau cukup placeholder untuk menandakan tempat gambar -->
-  <img src="file:///C:/Users/NAUFAL/Pictures/Screenshots/Screenshot%202025-04-29%20235159.png" alt="Gambar Proyek AI Sentinel" style="max-width: 600px; width: 80%;"> <!-- Sesuaikan max-width/width sesuai kebutuhan -->
+  <img src="[placeholder_project_image.png](https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screenshot%202025-04-29%20235159.png)" alt="Gambar Proyek AI Sentinel" style="max-width: 600px; width: 80%;"> <!-- Sesuaikan max-width/width sesuai kebutuhan -->
   <br>
   *Masukkan gambar utama proyek Anda di atas dengan mengganti tag placeholder.*
 </div>
