@@ -19,7 +19,6 @@
 
 <br> <!-- Jarak antara Deskripsi dan Demo -->
 
-## Demo Aplikasi
 
 <br>
 
