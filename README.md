@@ -24,26 +24,25 @@
 <br>
 
 <div align="center">
-  <!-- Tempatkan Gambar GIF Demo Aplikasi di sini -->
-  <!-- Contoh: ![AI Sentinel Demo GIF](path/to/your/demo.gif) -->
-  <img src="placeholder_demo.gif" alt="Demo Aplikasi AI Sentinel" style="max-width: 80%;"> <!-- Tambahkan max-width agar responsif -->
+
+  <img src="https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screen%20Recording%202025-04-30%20011225%20(1).gif" alt="Demo Aplikasi AI Sentinel" style="max-width: 80%;"> 
 </div>
 
 <br>
 
 <div align="center">
-  <!-- Link Figma -->
-  🎨 <a href="LINK_FIGMA_ANDA" target="_blank">Lihat Desain UI di Figma</a>
+
+  🎨 <a href="https://www.figma.com/design/7TAFz04rPyWTtmrFW5GOdB/VEGRIN-APP?node-id=143-17&t=H5WxxtgTcI9TofIn-1" target="_blank">Lihat Desain UI di Figma</a>
 </div>
 
 <br>
 
 <div align="center">
-  <!-- Link YouTube -->
-  ▶️ <a href="LINK_YOUTUBE_ANDA" target="_blank">Tonton Demo Aplikasi di YouTube</a>
+
+  ▶️ <a href="https://youtu.be/puof79nEvNQ?si=eOCs3grKjfiUZey3" target="_blank">Interview dengan kepala Rw Desa Bojong</a>
 </div>
 
-<br><br> <!-- Jarak antara Link dan Anggota -->
+<br><br> 
 
 
 ## Anggota
