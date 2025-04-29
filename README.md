@@ -5,19 +5,17 @@
 ---
 
 <div align="center">
-  <!-- Tempatkan tag gambar proyek Anda di sini -->
-  <!-- Contoh: ![Gambar Proyek AI Sentinel](path/to/your/project-image.jpg) -->
-  <!-- Atau cukup placeholder untuk menandakan tempat gambar -->
-  ![Gambar Proyek Anda](placeholder_project_image.png)
+
+  ![Gambar Proyek Anda](https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screenshot%202025-04-29%20235159.png)
   <br>
-  *Masukkan gambar utama proyek Anda di atas dengan mengganti tag placeholder.*
+
 </div>
 
-<br> <!-- Baris kosong untuk pemisah visual -->
+<br> 
 
 ## Anggota
 
-<br> <!-- Baris kosong untuk pemisah visual -->
+<br> 
 
 <div align="center">
 
