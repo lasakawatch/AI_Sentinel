@@ -34,7 +34,7 @@
 <div align="center">
   <!-- Tempatkan foto anggota kedua di sini -->
   <!-- Contoh: ![Foto Stiefanny Dwi Chandra](path/to/stiefanny_photo.jpg) -->
-  ![Foto Anggota 2](placeholder_photo_stiefanny.png)
+  ![Foto Anggota 2](2831b90d-64ab-44fe-bee7-c51539736f01.jpg)
   <br>
   **Stiefanny Dwi Chandra**
   <br>
