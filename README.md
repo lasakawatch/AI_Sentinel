@@ -13,7 +13,7 @@
 <div align="center">
   <!-- Deskripsi Singkat Aplikasi -->
   <p>
-    AI Sentinel adalah aplikasi cerdas berbasis kecerdasan buatan yang dirancang untuk membantu petani modern. Aplikasi ini menyediakan solusi seperti identifikasi penyakit dan hama pada tanaman, prediksi cuaca real-time untuk perencanaan pertanian, dan akses ke informasi serta marketplace produk pertanian untuk meningkatkan produktivitas dan kualitas hasil panen.
+    VEGRIN adalah aplikasi cerdas berbasis kecerdasan buatan yang dirancang untuk membantu petani modern. Aplikasi ini menyediakan solusi seperti identifikasi penyakit dan hama pada tanaman, prediksi cuaca real-time untuk perencanaan pertanian, dan akses ke informasi serta marketplace produk pertanian untuk meningkatkan produktivitas dan kualitas hasil panen.
   </p>
 </div>
 
