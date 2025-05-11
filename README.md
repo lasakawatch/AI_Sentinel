@@ -24,7 +24,7 @@
 
 <div align="center">
 
-  <img src="https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screen%20Recording%202025-04-30%20011225%20(2).gif" alt="Demo Aplikasi AI Sentinel" style="max-width: 60%;"> 
+  <img src="https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screen%20Recording%202025-04-30%20011225%20(2).gif" alt="Demo Aplikasi AI Sentinel" style="max-width: 60%;">
 </div>
 
 <br>
@@ -36,13 +36,27 @@
 
 <br>
 
-<div align="center">
 
-  ▶️ <a href="https://youtu.be/puof79nEvNQ?si=eOCs3grKjfiUZey3" target="_blank">Interview dengan kepala Rw Desa Bojong</a>
-</div>
+## 🔗 Interview Records Video
 
-<br><br> 
+![Deskripsi Foto 1](https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/IMG_20250324_165238%20(1).jpg "Judul Foto 1")
 
+- Lokasi :  RT 19, Bojonggede, Kabupaten Bogor.
+- Interview Dengan Petani Bapak Saefull Rahman Al-Banjary : [Klik di sini](https://youtu.be/puof79nEvNQ?si=DigyrPob0L97hLLq)
+- Video Observasi: [Klik di sini](https://youtu.be/S0VrZFoLWZI?si=UXXCt9Dub7bzswF0)
+
+##
+![Deskripsi Foto 2](https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screenshot%202025-05-11%20174600.png "Judul Foto 2")
+
+- Lokasi : Pasar Kencar,Jakarta Selatan
+- Interview dan tes aplikasi Dengan Distributor/Penjual Bapak Andani : [Klik di sini](https://youtu.be/rXQuA1h7BBo?si=Yn5xsAi0YGu-3IrB)
+##
+![Deskripsi Foto 2](https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screenshot%202025-05-11%20175111.png "Judul Foto 2")
+
+- Lokasi : Kota Bambu Utara, Jakarta Barat
+- Interview dan tes aplikasi Dengan Konsumen/Pembeli Ibu Ejin Hasanah : [Klik di sini](https://youtu.be/4Gf2iYJ_jvc?si=g5bCp9DJm3rs9EaR)
+
+<br>
 
 ## Anggota
 
@@ -82,5 +96,3 @@
 </div>
 
 <br>
-
-<!-- Anda bisa menambahkan bagian lain di bawah ini -->
