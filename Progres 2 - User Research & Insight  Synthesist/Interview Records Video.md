@@ -15,5 +15,5 @@
 ![Deskripsi Foto 2](https://github.com/lasakawatch/AI_Sentinel/blob/main/Lain-Lain/Screenshot%202025-05-11%20175111.png "Judul Foto 2")
 
 - Lokasi : Kota Bambu Utara, Jakarta Barat
-- Interview Dengan Konsumen/Pembeli Ibu Ejin Hasanah : [Klik di sini](https://youtu.be/4Gf2iYJ_jvc?si=g5bCp9DJm3rs9EaR)
+- Interview dan tes aplikasi Dengan Konsumen/Pembeli Ibu Ejin Hasanah : [Klik di sini](https://youtu.be/4Gf2iYJ_jvc?si=g5bCp9DJm3rs9EaR)
 
